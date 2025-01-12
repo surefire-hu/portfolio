@@ -48,7 +48,6 @@ assumimiBtn.addEventListener('click', (e) => {
     e.preventDefault();
     offcanvas.classList.add('active');
 });
-
 closeOffcanvas.addEventListener('click', () => {
     offcanvas.classList.remove('active');
 });
