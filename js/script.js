@@ -84,12 +84,12 @@ const closeWechat = document.querySelector('.close-wechat');
 wechatLink.addEventListener('click', (e) => {
     e.preventDefault();
     wechatOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Previene lo scroll
+    document.body.style.overflow = 'hidden'; 
 });
 
 closeWechat.addEventListener('click', () => {
     wechatOverlay.classList.remove('active');
-    document.body.style.overflow = ''; // Riabilita lo scroll
+    document.body.style.overflow = ''; 
 });
 
 wechatOverlay.addEventListener('click', (e) => {
