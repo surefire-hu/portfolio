@@ -75,3 +75,26 @@ document.querySelectorAll('.navbar a').forEach(link => {
         navbar.classList.remove('active');
     });
 });
+
+// Aggiungi questo codice per gestire l'overlay WeChat
+const wechatLink = document.querySelector('.wechat-container');
+const wechatOverlay = document.querySelector('.wechat-overlay');
+const closeWechat = document.querySelector('.close-wechat');
+
+wechatLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    wechatOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Previene lo scroll
+});
+
+closeWechat.addEventListener('click', () => {
+    wechatOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Riabilita lo scroll
+});
+
+wechatOverlay.addEventListener('click', (e) => {
+    if (e.target === wechatOverlay) {
+        wechatOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});

@@ -947,3 +947,60 @@
       font-size: 1.4rem;
    }
 }
+
+/* Aggiungi questi stili per l'overlay WeChat */
+.wechat-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.wechat-overlay.active {
+    display: flex;
+}
+
+.wechat-modal {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    border: 2px solid var(--main-color);
+    max-width: 300px;
+    width: 90%;
+}
+
+.wechat-modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.wechat-modal h3 {
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.close-wechat {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-wechat:hover {
+    transform: scale(1.1);
+}
