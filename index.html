@@ -17,8 +17,130 @@
     
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <style>
+        /* Stili per il carosello delle competenze */
+        .tech-stack {
+            margin-top: 30px;
+        }
+        
+        .tech-carousel {
+            position: relative;
+            overflow: hidden;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 150px;
+            padding: 10px 15px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .tech-item i {
+            font-size: 24px;
+            color: #00ffff;
+        }
+        
+        .tech-item span {
+            color: #fff;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .tech-carousel:hover .tech-track {
+            animation-play-state: paused;
+        }
+        
+        /* Colori specifici per le tecnologie */
+        .tech-item[data-tech="html"] i { color: #e34f26; }
+        .tech-item[data-tech="css"] i { color: #1572b6; }
+        .tech-item[data-tech="javascript"] i { color: #f7df1e; }
+        .tech-item[data-tech="typescript"] i { color: #3178c6; }
+        .tech-item[data-tech="php"] i { color: #777bb4; }
+        .tech-item[data-tech="vue"] i { color: #4fc08d; }
+        .tech-item[data-tech="nuxt"] i { color: #00dc82; }
+        .tech-item[data-tech="laravel"] i { color: #ff2d20; }
+        .tech-item[data-tech="node"] i { color: #339933; }
+        .tech-item[data-tech="nest"] i { color: #e0234e; }
+        .tech-item[data-tech="mysql"] i { color: #4479a1; }
+        .tech-item[data-tech="postgres"] i { color: #336791; }
+        .tech-item[data-tech="mongo"] i { color: #47a248; }
+        .tech-item[data-tech="bootstrap"] i { color: #7952b3; }
+        .tech-item[data-tech="tailwind"] i { color: #06b6d4; }
+        .tech-item[data-tech="sass"] i { color: #cc6699; }
+        
+        /* Icone personalizzate per tecnologie senza FontAwesome */
+        .custom-icon {
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .nuxt-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300dc82"><path d="M12.58 2.46L21.13 17.5c.3.52.3 1.16 0 1.68-.15.26-.38.47-.65.61-.27.14-.57.21-.88.21H15.5c-.31 0-.61-.07-.88-.21-.27-.14-.5-.35-.65-.61L9.42 10.5 12.58 2.46zM9.42 2.46L.87 17.5c-.3.52-.3 1.16 0 1.68.15.26.38.47.65.61.27.14.57.21.88.21h4.6c.31 0 .61-.07.88-.21.27-.14.5-.35.65-.61L12.58 10.5 9.42 2.46z"/></svg>');
+        }
+        
+        .nest-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e0234e"><path d="M14.131.047c-.173 0-.334.037-.483.087.316.21.49.49.576.806.007.043.019.08.019.123 0 .226-.087.446-.268.596-.358.302-.826.392-1.262.392-.18 0-.36-.024-.53-.067-.102-.026-.2-.058-.296-.092-.096-.033-.19-.07-.284-.108-.18-.074-.357-.167-.525-.275-.168-.108-.329-.232-.48-.372-.151-.14-.293-.297-.424-.465-.131-.168-.25-.35-.357-.543-.107-.193-.202-.398-.285-.61-.083-.212-.154-.43-.213-.654-.059-.224-.106-.453-.14-.687-.034-.234-.055-.473-.063-.716-.008-.243-.003-.489.013-.738.016-.249.045-.502.087-.759.042-.257.097-.518.165-.784.068-.266.149-.536.243-.811.094-.275.201-.556.32-.845.119-.289.251-.584.396-.885.145-.301.303-.608.474-.921.171-.313.354-.632.549-.957.195-.325.403-.657.623-.997.22-.34.452-.686.696-1.038.244-.352.501-.711.77-1.077.269-.366.55-.739.843-1.118.293-.379.598-.765.915-1.158.317-.393.646-.793.987-1.199.341-.406.694-.818 1.059-1.236.365-.418.743-.842 1.133-1.272.39-.43.792-.866 1.206-1.308.414-.442.84-.89 1.278-1.343.438-.453.888-.912 1.35-1.376.462-.464.936-.933 1.422-1.407.486-.474.984-.953 1.494-1.437.51-.484 1.032-.973 1.566-1.467.534-.494 1.08-.993 1.638-1.497.558-.504 1.128-1.013 1.71-1.527.582-.514 1.176-1.033 1.782-1.557.606-.524 1.224-1.053 1.854-1.587.63-.534 1.272-1.073 1.926-1.617.654-.544 1.32-1.093 1.998-1.647.678-.554 1.368-1.113 2.07-1.677.702-.564 1.416-1.133 2.142-1.707.726-.574 1.464-1.153 2.214-1.737.75-.584 1.512-1.173 2.286-1.767.774-.594 1.56-1.193 2.358-1.797.798-.604 1.608-1.213 2.43-1.827.822-.614 1.656-1.233 2.502-1.857.846-.624 1.704-1.253 2.574-1.887.87-.634 1.752-1.273 2.646-1.917.894-.644 1.8-1.293 2.718-1.947.918-.654 1.848-1.313 2.79-1.977.942-.664 1.896-1.333 2.862-2.007.966-.674 1.944-1.353 2.934-2.037.99-.684 1.992-1.373 3.006-2.067 1.014-.694 2.04-1.393 3.078-2.097 1.038-.704 2.088-1.413 3.15-2.127 1.062-.714 2.136-1.433 3.222-2.157 1.086-.724 2.184-1.453 3.294-2.187 1.11-.734 2.232-1.473 3.366-2.217 1.134-.744 2.28-1.493 3.438-2.247 1.158-.754 2.328-1.513 3.51-2.277 1.182-.764 2.376-1.533 3.582-2.307 1.206-.774 2.424-1.553 3.654-2.337 1.23-.784 2.472-1.573 3.726-2.367 1.254-.794 2.52-1.593 3.798-2.397 1.278-.804 2.568-1.613 3.87-2.427 1.302-.814 2.616-1.633 3.942-2.457 1.326-.824 2.664-1.653 4.014-2.487 1.35-.834 2.712-1.673 4.086-2.517 1.374-.844 2.76-1.693 4.158-2.547 1.398-.854 2.808-1.713 4.23-2.577 1.422-.864 2.856-1.733 4.302-2.607 1.446-.874 2.904-1.753 4.374-2.637 1.47-.884 2.952-1.773 4.446-2.667 1.494-.894 3-1.793 4.518-2.697 1.518-.904 3.048-1.813 4.59-2.727 1.542-.914 3.096-1.833 4.662-2.757 1.566-.924 3.144-1.853 4.734-2.787 1.59-.934 3.192-1.873 4.806-2.817 1.614-.944 3.24-1.893 4.878-2.847 1.638-.954 3.288-1.913 4.95-2.877 1.662-.964 3.336-1.933 5.022-2.907 1.686-.974 3.384-1.953 5.094-2.937 1.71-.984 3.432-1.973 5.166-2.967 1.734-.994 3.48-1.993 5.238-2.997 1.758-1.004 3.528-2.013 5.31-3.027 1.782-1.014 3.576-2.033 5.382-3.057 1.806-1.024 3.624-2.053 5.454-3.087 1.83-1.034 3.672-2.073 5.526-3.117 1.854-1.044 3.72-2.093 5.598-3.147 1.878-1.054 3.768-2.113 5.67-3.177 1.902-1.064 3.816-2.133 5.742-3.207 1.926-1.074 3.864-2.153 5.814-3.237 1.95-1.084 3.912-2.173 5.886-3.267 1.974-1.094 3.96-2.193 5.958-3.297 1.998-1.104 4.008-2.213 6.03-3.327 2.022-1.114 4.056-2.233 6.102-3.357 2.046-1.124 4.104-2.253 6.174-3.387 2.07-1.134 4.152-2.273 6.246-3.417 2.094-1.144 4.2-2.293 6.318-3.447 2.118-1.154 4.248-2.313 6.39-3.477 2.142-1.164 4.296-2.333 6.462-3.507 2.166-1.174 4.344-2.353 6.534-3.537 2.19-1.184 4.392-2.373 6.606-3.567 2.214-1.194 4.44-2.393 6.678-3.597 2.238-1.204 4.488-2.413 6.75-3.627 2.262-1.214 4.536-2.433 6.822-3.657 2.286-1.224 4.584-2.453 6.894-3.687 2.31-1.234 4.632-2.473 6.966-3.717 2.334-1.244 4.68-2.493 7.038-3.747 2.358-1.254 4.728-2.513 8.1-3.777"/></svg>');
+        }
+        
+        .postgres-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23336791"><path d="M23.5 12.05c0-1.57-.64-3.07-1.77-4.17-.19-.18-.4-.34-.62-.49-.24-.16-.49-.31-.75-.44-1.29-.67-2.73-.95-4.18-.95-1.45 0-2.89.28-4.18.95-.26.13-.51.28-.75.44-.22.15-.43.31-.62.49-1.13 1.1-1.77 2.6-1.77 4.17 0 1.57.64 3.07 1.77 4.17.19.18.4.34.62.49.24.16.49.31.75.44 1.29.67 2.73.95 4.18.95 1.45 0 2.89-.28 4.18-.95.26-.13.51-.28.75-.44.22-.15.43-.31.62-.49 1.13-1.1 1.77-2.6 1.77-4.17z"/></svg>');
+        }
+        
+        .mongo-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2347a248"><path d="M17.2 12.2c0-3.5-2.8-6.3-6.3-6.3S4.6 8.7 4.6 12.2c0 2.6 1.6 4.8 3.9 5.7v2.4c0 .3.2.5.5.5s.5-.2.5-.5v-2.4c2.3-.9 3.9-3.1 3.9-5.7z"/></svg>');
+        }
+        
+        /* Testo descrittivo aggiornato */
+        .about-text p {
+            line-height: 1.8;
+            color: #ededed;
+        }
+        
+        .about-text span {
+            color: #00ffff;
+            font-weight: 600;
+        }
+        
+        .about-text b {
+            color: #00ffff;
+        }
+    </style>
 </head> 
-
 
 <body>
     <!-- header design -->
@@ -70,27 +192,165 @@
                 <h3>FullStack Developer!</h3>
                 <p>
                     Ciao a tutti! <br>
-                    Mi chiamo <b>Steven Hu</b> e sono un Full Stack Developer. <br>
-                    Amo esplorare ogni aspetto dello sviluppo software, dal frontend al backend. <br> 
-                    Ho esperienza con diversi linguaggi e tecnologie, come <span>Html</span>, <span>Css</span>, <span>JavaScript</span>, <span>Php</span>, <span>Vue.Js</span>, <span>Laravel</span>, e <span>MySQL</span>. <br>
-                    Mi piace creare applicazioni web complete, dall'interfaccia utente alla logica di business, fino alla gestione dei database. <br>
+                    Mi chiamo <b>Steven Hu</b> e sono un Full Stack Developer con una passione infinita per la tecnologia. <br>
+                    Amo esplorare ogni aspetto dello sviluppo software, dal frontend al backend, fino alle moderne architetture cloud. <br> 
+                    Ho esperienza con un'ampia gamma di linguaggi e tecnologie moderne, dal classico <span>HTML</span> e <span>CSS</span> 
+                    ai framework più avanzati come <span>Vue.js</span>, <span>Nuxt.js</span> e <span>NestJS</span>. <br>
+                    Lavoro con linguaggi come <span>JavaScript</span>, <span>TypeScript</span>, <span>PHP</span> e <span>Node.js</span>, 
+                    utilizzando framework potenti come <span>Laravel</span> per il backend. <br>
+                    Per quanto riguarda i database, ho esperienza con <span>MySQL</span>, <span>PostgreSQL</span> e <span>MongoDB</span>. <br>
+                    Nel frontend utilizzo strumenti come <span>Bootstrap</span>, <span>Tailwind CSS</span> e <span>Sass</span> per creare interfacce moderne e responsive. <br>
+                    Mi piace creare applicazioni web complete e scalabili, dall'interfaccia utente alla logica di business, 
+                    fino alla gestione efficiente dei database e delle API REST. <br>
                     La mia passione per la programmazione mi spinge a migliorare continuamente le mie competenze <br> 
-                    e a rimanere aggiornato sulle ultime novità del settore. <br>
-                    Sono entusiasta di affrontare nuove sfide e di collaborare con altri professionisti per creare soluzioni innovative. <br>
-                    Se condividi la mia passione o hai un progetto interessante in mente, non esitare a contattarmi! <br>
+                    e a rimanere sempre aggiornato sulle ultime novità del settore tecnologico. <br>
+                    Sono entusiasta di affrontare nuove sfide e di collaborare con altri professionisti per creare soluzioni innovative e performanti. <br>
+                    Se condividi la mia passione per la tecnologia o hai un progetto interessante in mente, non esitare a contattarmi! <br>
                     <span>Grazie per l'attenzione!</span> 
                 </p>
                 
                 <div class="tech-stack">
                     <p>Le mie competenze principali includono:</p>
-                    <div class="icons">
-                        <i class="fa-brands fa-html5 tooltip"><span class="tooltiptext">Html5</span></i>
-                        <i class="fa-brands fa-css3 tooltip"><span class="tooltiptext">Css3</span></i>
-                        <i class="fa-brands fa-js tooltip"><span class="tooltiptext">JavaScript</span></i>
-                        <i class="fa-brands fa-php tooltip"><span class="tooltiptext">Php</span></i>
-                        <i class="fa-brands fa-vuejs tooltip"><span class="tooltiptext">Vue.Js</span></i>
-                        <i class="fa-brands fa-laravel tooltip"><span class="tooltiptext">Laravel</span></i>
-                        <i class="fa-solid fa-database tooltip"><span class="tooltiptext">MySQL</span></i>
+                    <div class="tech-carousel">
+                        <div class="tech-track">
+                            <!-- Frontend -->
+                            <div class="tech-item" data-tech="html">
+                                <i class="fa-brands fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item" data-tech="css">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item" data-tech="javascript">
+                                <i class="fa-brands fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item" data-tech="typescript">
+                                <i class="fa-brands fa-js"></i>
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="tech-item" data-tech="vue">
+                                <i class="fa-brands fa-vuejs"></i>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="tech-item" data-tech="nuxt">
+                                <div class="custom-icon nuxt-icon"></div>
+                                <span>Nuxt.js</span>
+                            </div>
+                            
+                            <!-- Backend -->
+                            <div class="tech-item" data-tech="php">
+                                <i class="fa-brands fa-php"></i>
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-item" data-tech="laravel">
+                                <i class="fa-brands fa-laravel"></i>
+                                <span>Laravel</span>
+                            </div>
+                            <div class="tech-item" data-tech="node">
+                                <i class="fa-brands fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-item" data-tech="nest">
+                                <div class="custom-icon nest-icon"></div>
+                                <span>NestJS</span>
+                            </div>
+                            
+                            <!-- Database -->
+                            <div class="tech-item" data-tech="mysql">
+                                <i class="fa-solid fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item" data-tech="postgres">
+                                <div class="custom-icon postgres-icon"></div>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="tech-item" data-tech="mongo">
+                                <div class="custom-icon mongo-icon"></div>
+                                <span>MongoDB</span>
+                            </div>
+                            
+                            <!-- Styling -->
+                            <div class="tech-item" data-tech="bootstrap">
+                                <i class="fa-brands fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="tech-item" data-tech="tailwind">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <span>Tailwind</span>
+                            </div>
+                            <div class="tech-item" data-tech="sass">
+                                <i class="fa-brands fa-sass"></i>
+                                <span>Sass</span>
+                            </div>
+                            
+                            <!-- Duplicate per loop infinito -->
+                            <div class="tech-item" data-tech="html">
+                                <i class="fa-brands fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item" data-tech="css">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item" data-tech="javascript">
+                                <i class="fa-brands fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item" data-tech="typescript">
+                                <i class="fa-brands fa-js"></i>
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="tech-item" data-tech="vue">
+                                <i class="fa-brands fa-vuejs"></i>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="tech-item" data-tech="nuxt">
+                                <div class="custom-icon nuxt-icon"></div>
+                                <span>Nuxt.js</span>
+                            </div>
+                            <div class="tech-item" data-tech="php">
+                                <i class="fa-brands fa-php"></i>
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-item" data-tech="laravel">
+                                <i class="fa-brands fa-laravel"></i>
+                                <span>Laravel</span>
+                            </div>
+                            <div class="tech-item" data-tech="node">
+                                <i class="fa-brands fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-item" data-tech="nest">
+                                <div class="custom-icon nest-icon"></div>
+                                <span>NestJS</span>
+                            </div>
+                            <div class="tech-item" data-tech="mysql">
+                                <i class="fa-solid fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item" data-tech="postgres">
+                                <div class="custom-icon postgres-icon"></div>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="tech-item" data-tech="mongo">
+                                <div class="custom-icon mongo-icon"></div>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="tech-item" data-tech="bootstrap">
+                                <i class="fa-brands fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="tech-item" data-tech="tailwind">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <span>Tailwind</span>
+                            </div>
+                            <div class="tech-item" data-tech="sass">
+                                <i class="fa-brands fa-sass"></i>
+                                <span>Sass</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,6 +387,53 @@
             
             <div class="swiper progetti-slider">
                 <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="progetti-box">
+                            <img src="img/comics.png" alt="Progetto 1">
+                            <div class="progetti-info">
+                                <h3>Comics</h3>
+                                <p>Tecnologie utilizzate: HTML, Vue.js, Sass.</p>
+                                <a href="https://github.com/surefire-hu/vite-comics" class="btn">Vedi Progetto <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="progetti-box">
+                            <img src="img/bool.png" alt="Progetto 2">
+                            <div class="progetti-info">
+                                <h3>Bool-BnB</h3>
+                                <p>Tecnologie utilizzate: Vue.js, Tailwind, Laravel, MySQL.</p>
+                                <a href="https://github.com/orgs/project-bnb/repositories" class="btn">Vedi Progetto <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="progetti-box">
+                            <img src="img/project.png" alt="Progetto 3">
+                            <div class="progetti-info">
+                                <h3>Project</h3>
+                                <p>Tecnologie utilizzate: Vue.js, Tailwind.</p>
+                                <a href="https://github.com/surefire-hu/proj-html-vuejs" class="btn">Vedi Progetto <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="progetti-box">
+                            <img src="img/boolflix.png" alt="Progetto 4">
+                            <div class="progetti-info">
+                                <h3>Boolflix</h3>
+                                <p>Tecnologie utilizzate: Vue.js, Tailwind.</p>
+                                <a href="https://github.com/surefire-hu/vite-boolflix" class="btn">Vedi Progetto <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
                         <div class="progetti-box">
@@ -260,6 +567,52 @@
             <p>Scansiona il QR Code per aggiungermi su WeChat</p>
         </div>
     </div>
+    
+    <script>
+        // Script per inizializzare Swiper per i progetti
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.progetti-slider', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }
+            });
+        });
+        
+        // Script per il carosello delle tecnologie
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.tech-track');
+            const carousel = document.querySelector('.tech-carousel');
+            
+            // Pausa l'animazione quando si passa sopra con il mouse
+            carousel.addEventListener('mouseenter', function() {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                track.style.animationPlayState = 'running';
+            });
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
