@@ -233,44 +233,44 @@
    color: var(--bg-color);
  }
 
-/* About Section Enhanced */
+/* About Section - Responsive */
 .about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10rem 9% 2rem;
+    padding: 10rem 5% 5rem;
     background: var(--second-bg-color);
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(240, 136, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(240, 136, 0, 0.1) 0%, transparent 50%);
-    z-index: 0;
+.about .heading {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--main-color), #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(240, 136, 0, 0.5);
 }
 
 .about-content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 6rem;
+    align-items: flex-start;
+    gap: 5rem;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .about-img {
     position: relative;
-    width: 30rem;
-    height: 30rem;
+    width: 35rem;
+    height: 35rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -279,6 +279,7 @@
     padding: 1rem;
     animation: float 6s ease-in-out infinite;
     box-shadow: 0 20px 50px rgba(240, 136, 0, 0.3);
+    flex-shrink: 0;
 }
 
 @keyframes float {
@@ -292,9 +293,11 @@
 
 .about-img img {
     width: 90%;
+    height: 90%;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .about-img:hover img {
@@ -330,7 +333,7 @@
     flex: 1;
     max-width: 700px;
     background: rgba(255, 255, 255, 0.02);
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 2rem;
     border: 1px solid rgba(240, 136, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -349,7 +352,7 @@
 }
 
 .about-text h3 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     background: linear-gradient(45deg, var(--main-color), #ff6b35);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -362,17 +365,58 @@
     line-height: 1.8;
     color: #f0f0f0;
     text-align: justify;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .about-text p b,
 .about-text p span {
     color: var(--main-color);
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(240, 136, 0, 0.3);
 }
 
-/* Tech Stack Carousel Enhanced */
+/* Mobile CTA Button */
+.mobile-cta {
+    display: none;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 1rem 2.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.read-more-btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240, 136, 0, 0.3);
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* Full Text Section */
+.full-text {
+    display: block;
+}
+
+/* Tech Stack Section */
 .tech-stack {
     margin-top: 4rem;
     width: 100%;
@@ -389,7 +433,7 @@
 .tech-categories {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
 .tech-category {
@@ -476,6 +520,7 @@
     font-size: 1.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 
 @keyframes scroll-tech {
     0% {
@@ -1054,35 +1099,53 @@ span {
   .section-services {
     width: calc(50% - 1rem);
   }
-
-  .about-content {
-    gap: 4rem;
-  }
-
-  .about-img {
-    width: 25rem;
-    height: 25rem;
-  }
-
-  .about-text {
-    padding: 3rem;
-  }
 }
 
 @media (max-width: 991px) {
    .header {
       padding: 2rem 4%;  
    }
-
-   .about {
-      padding: 8rem 4% 2rem;
-   }
-
-   .about-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 3rem;
-   }
+    .about {
+        padding: 8rem 4% 4rem;
+    }
+    
+    .about-content {
+        gap: 4rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-img {
+        width: 28rem;
+        height: 28rem;
+    }
+    
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .about-text p {
+        text-align: center;
+    }
+    
+    .tech-category {
+        padding: 1.5rem;
+    }
+    
+    .tech-item {
+        min-width: 160px;
+        padding: 1rem 1.5rem;
+    }
+    
+    .tech-item i,
+    .custom-icon {
+        font-size: 2.4rem;
+    }
+    
+    .tech-item span {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1090,6 +1153,118 @@ span {
       background: rgba(41, 17, 8, 0.9);  
       backdrop-filter: blur(10px);        
    }
+    .about {
+        padding: 6rem 3% 3rem;
+    }
+    
+    .about .heading {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .about-img {
+        width: 22rem;
+        height: 22rem;
+    }
+    
+    .about-text {
+        padding: 2.5rem;
+    }
+    
+    .about-text h3 {
+        font-size: 2.6rem;
+    }
+    
+    .about-text p {
+        font-size: 1.6rem;
+        text-align: left;
+    }
+    
+    /* Mobile CTA Button */
+    .mobile-cta {
+        display: block;
+    }
+    
+    .full-text {
+        display: none;
+    }
+    
+    .full-text.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Tech Stack Mobile Optimizations */
+    .tech-stack {
+        margin-top: 3rem;
+    }
+    
+    .tech-stack h4 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tech-categories {
+        gap: 2rem;
+    }
+    
+    .tech-category {
+        padding: 1.5rem;
+    }
+    
+    .tech-category h5 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .tech-carousel {
+        height: 80px;
+        padding: 1.5rem 0;
+    }
+    
+    .tech-track {
+        gap: 2rem;
+        animation: scroll-tech 20s linear infinite;
+    }
+    
+    .tech-item {
+        min-width: 140px;
+        padding: 0.8rem 1.2rem;
+        gap: 1rem;
+    }
+    
+    .tech-item i,
+    .custom-icon {
+        font-size: 2rem;
+    }
+    
+    .tech-item span {
+        font-size: 1.3rem;
+    }
+    
+    /* Simplify animations on mobile */
+    .about-img {
+        animation: float 4s ease-in-out infinite;
+    }
+    
+    .about-img .circle-spin {
+        animation: spin 6s linear infinite;
+    }
 
    #menu-icon {
       display: block;     
@@ -1137,53 +1312,8 @@ span {
   .service-box p {
     font-size: 1.2rem;
   }
-
-  .about {
-    padding: 8rem 3% 2rem;
-  }
-
   .heading {
     font-size: 3.5rem;
-  }
-
-  .about-img {
-    width: 20rem;
-    height: 20rem;
-  }
-
-  .about-text h3 {
-    font-size: 2.8rem;
-  }
-
-  .about-text p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .about-text {
-    padding: 2.5rem;
-  }
-
-  .tech-categories {
-    gap: 2rem;
-  }
-
-  .tech-category {
-    padding: 1.5rem;
-  }
-
-  .tech-item {
-    min-width: 160px;
-    padding: 1rem 1.5rem;
-  }
-
-  .tech-item i,
-  .custom-icon {
-    font-size: 2.4rem;
-  }
-
-  .tech-item span {
-    font-size: 1.4rem;
   }
 }
 
@@ -1191,6 +1321,59 @@ span {
    .header {
       padding: 1.5rem 4%;  
    }
+    .about {
+        padding: 5rem 2% 2rem;
+    }
+    
+    .about .heading {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-img {
+        width: 18rem;
+        height: 18rem;
+    }
+    
+    .about-text {
+        padding: 2rem;
+    }
+    
+    .about-text h3 {
+        font-size: 2.2rem;
+    }
+    
+    .about-text p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .read-more-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.5rem;
+    }
+    
+    .tech-stack h4 {
+        font-size: 1.8rem;
+    }
+    
+    .tech-category h5 {
+        font-size: 1.4rem;
+    }
+    
+    .tech-item {
+        min-width: 120px;
+        padding: 0.6rem 1rem;
+    }
+    
+    .tech-item span {
+        font-size: 1.2rem;
+    }
+    
+    .tech-carousel {
+        height: 70px;
+        padding: 1rem 0;
+    }
 
    .logo {
       font-size: 2rem;    
@@ -1205,52 +1388,7 @@ span {
       margin: 1.5rem 0;   
    }
 
-  .about {
-    padding: 6rem 2% 2rem;
-  }
-
   .heading {
     font-size: 3rem;
-  }
-
-  .about-img {
-    width: 16rem;
-    height: 16rem;
-  }
-
-  .about-text h3 {
-    font-size: 2.4rem;
-  }
-
-  .about-text p {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-text {
-    padding: 2rem;
-  }
-
-  .tech-item {
-    min-width: 140px;
-    padding: 0.8rem 1.2rem;
-    gap: 1rem;
-  }
-
-  .tech-item i,
-  .custom-icon {
-    font-size: 2rem;
-  }
-
-  .tech-item span {
-    font-size: 1.2rem;
-  }
-
-  .tech-stack h4 {
-    font-size: 2rem;
-  }
-
-  .tech-category h5 {
-    font-size: 1.6rem;
   }
 }
