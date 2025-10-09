@@ -1083,10 +1083,6 @@ span {
       text-align: center;
       gap: 3rem;
    }
-
-   .about-text {
-      max-width: 100%;
-   }
 }
 
 @media (max-width: 768px) {
