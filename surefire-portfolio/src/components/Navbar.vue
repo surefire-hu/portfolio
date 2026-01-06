@@ -45,7 +45,7 @@ onMounted(() => {
     <transition name="fade">
       <div v-if="isMenuOpen" class="absolute top-full left-0 w-full bg-dark-bg border-b border-white/10 p-6 md:hidden flex flex-col gap-4 text-center">
         <a href="#home" @click="isMenuOpen = false">Home</a>
-        <a href="#about" @click="isMenuOpen = false">Chi Sono</a>
+        <a href="#about" @click="isMenuOpen = false">TechStack</a>
         <a href="#progetti" @click="isMenuOpen = false">Progetti</a>
       </div>
     </transition>
