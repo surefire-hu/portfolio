@@ -26,7 +26,7 @@ onMounted(() => {
 
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#home" class="hover:text-white transition-colors">Home</a>
-        <a href="#about" class="hover:text-white transition-colors">Chi Sono</a>
+        <a href="#about" class="hover:text-white transition-colors">TechStack</a>
         <a href="#progetti" class="hover:text-white transition-colors">Progetti</a>
         <a 
           href="https://github.com/surefire-hu" 
