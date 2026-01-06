@@ -23,11 +23,11 @@ defineProps(['project'])
         <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
           {{ project.title }}
         </h3>
-        <div class="flex gap-3">
+        <div class="flex gap-3 z-20">
           <a :href="project.link" target="_blank" class="text-slate-400 hover:text-white transition-colors">
             <Github :size="20" />
           </a>
-          <a href="#" class="text-slate-400 hover:text-white transition-colors">
+          <a :href="project.link" class="text-slate-400 hover:text-white transition-colors">
             <ExternalLink :size="20" />
           </a>
         </div>
