@@ -14,7 +14,7 @@ export const projects = [
     description: "Web app ispirata ad AirBnb con ricerca avanzata e sistema di messaggistica integrato.",
     tech: ["Vue.js", "Tailwind", "Laravel", "MySQL"],
     link: "https://github.com/orgs/project-bnb/repositories",
-    image: "/img/bool.png",
+    image: "/img/Bool.png",
     category: "FullStack"
   },
   {
