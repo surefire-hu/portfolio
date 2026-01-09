@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://steven-hu.netlify.app/sitemap.xml
