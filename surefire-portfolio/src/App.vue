@@ -36,7 +36,7 @@ onMounted(() => {
           
           <div class="space-y-8 mt-10">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 mt-1 text-emerald-400"><Zap /></div>
+              <div class="shrink-0 mt-1 text-emerald-400"><Zap /></div>
               <div>
                 <h4 class="text-white font-bold text-lg">Sviluppo API RESTful</h4>
                 <p class="text-slate-400 text-sm leading-relaxed text-pretty">
@@ -45,7 +45,7 @@ onMounted(() => {
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 mt-1 text-blue-400"><Layers /></div>
+              <div class="shrink-0 mt-1 text-blue-400"><Layers /></div>
               <div>
                 <h4 class="text-white font-bold text-lg">Frontend Reattivo</h4>
                 <p class="text-slate-400 text-sm leading-relaxed text-pretty">
