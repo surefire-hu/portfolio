@@ -2,7 +2,6 @@
 import { onMounted } from 'vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-// Aggiungi queste icone se non le avevi importate in App.vue
 import { Zap, Layers } from 'lucide-vue-next'
 
 import Navbar from './components/Navbar.vue'

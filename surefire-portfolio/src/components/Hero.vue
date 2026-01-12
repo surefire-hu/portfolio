@@ -15,11 +15,12 @@ import { Github, Linkedin, Mail } from 'lucide-vue-next'
       <h1 data-aos="fade-up" class="text-6xl md:text-8xl font-bold text-white mb-6">
         Steven <span class="bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Hu</span>
       </h1>
+      <img data-aos="fade-up" src="/img/logo-1.png" alt="logo" class="w-50 mx-auto invert">
 
       <p data-aos="fade-up" data-aos-delay="200" class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-10">
         Specializzato nella costruzione di applicazioni moderne. 
         Dal design reattivo con <span class="text-slate-200 font-semibold">Vue.js</span> 
-        alla logica backend complessa con <span class="text-slate-200 font-semibold">Python/Django</span>, <span class="text-slate-200 font-semibold">TypeScript</span> e <span class="text-slate-200 font-semibold">Laravel</span>.
+        alla logica backend complessa con <span class="text-slate-200 font-semibold">Python/Django</span>, <span class="text-slate-200 font-semibold">TypeScript</span> e <span class="text-slate-200 font-semibold">PHP/Laravel</span>.
       </p>
 
       <div data-aos="zoom-in" data-aos-delay="400" class="flex justify-center gap-6">
