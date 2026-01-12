@@ -21,7 +21,7 @@ export const projects = [
     id: 3,
     title: "Gestionale Daoyuan",
     description: "Gestionale sviluppata per la gestione delle presenze ed eventi.",
-    tech: ["Vue.js", "JavaScript", "TailwindCSS"],
+    tech: ["Vue.js", "JavaScript", "TailwindCSS", "MongoDB"],
     link: "https://github.com/surefire-hu/daoyuanxingshi",
     image: "/img/gestionale.png",
     category: "FullStack"
@@ -51,6 +51,15 @@ export const projects = [
     tech: ["Vue.js", "Tailwind", "HTML"],
     link: "https://github.com/surefire-hu/proj-html-vuejs",
     image: "/img/project.png",
+    category: "Frontend"
+  },
+  {
+    id: 7,
+    title: "Se7ven Club",
+    description: "Sito vetrina per una discoteca.",
+    tech: ["Vue.js", "Tailwind", "HTML"],
+    link: "https://github.com/surefire-hu/seven-club",
+    image: "/img/seven-club.png",
     category: "Frontend"
   }
 ];

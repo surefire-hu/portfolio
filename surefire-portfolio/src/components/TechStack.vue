@@ -25,6 +25,7 @@ const categories = [
       { name: "Vue.js", level: "Expert" },
       { name: "JavaScript", level: "Advanced" },
       { name: "Tailwind CSS", level: "Expert" },
+      { name: "Nest.js", level: "Intermediate" },
       { name: "Nuxt.js", level: "Advanced" }
     ]
   },
