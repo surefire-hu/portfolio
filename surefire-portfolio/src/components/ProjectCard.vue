@@ -18,7 +18,7 @@ defineProps(['project'])
         loading="lazy"
         width="400" 
         height="225"
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80"></div>
     </div>
