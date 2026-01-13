@@ -11,6 +11,8 @@ import Projects from './components/Projects.vue'
 import Footer from './components/Footer.vue'
 import Timeline from './components/Timeline.vue'
 import Loader from './components/Loader.vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 onMounted(() => {
   AOS.init({
@@ -31,25 +33,25 @@ onMounted(() => {
       <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         <div data-aos="fade-right" class="order-2 lg:order-1">
-          <h3 class="text-blue-400 font-mono mb-2 tracking-tighter">I MIEI SERVIZI</h3>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Soluzioni End-to-End</h2>
+          <h3 class="text-blue-400 font-mono mb-2 tracking-tighter">{{ t('services.subtitle') }}</h3>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">{{ t('services.title') }}</h2>
           
           <div class="space-y-8 mt-10">
             <div class="flex gap-4">
               <div class="shrink-0 mt-1 text-emerald-400"><Zap /></div>
               <div>
-                <h4 class="text-white font-bold text-lg">Sviluppo API RESTful</h4>
+                <h4 class="text-white font-bold text-lg">{{ t('services.api_title') }}</h4>
                 <p class="text-slate-400 text-sm leading-relaxed text-pretty">
-                  Progettazione di backend robusti con Django, Typescript o Laravel, pronti per essere consumati da qualsiasi frontend o app mobile.
+                  {{ t('services.api_desc') }}
                 </p>
               </div>
             </div>
             <div class="flex gap-4">
               <div class="shrink-0 mt-1 text-blue-400"><Layers /></div>
               <div>
-                <h4 class="text-white font-bold text-lg">Frontend Reattivo</h4>
+                <h4 class="text-white font-bold text-lg">{{ t('services.front_title') }}</h4>
                 <p class="text-slate-400 text-sm leading-relaxed text-pretty">
-                  Interfacce utente dinamiche e veloci con Vue.js 3, con una maniacale attenzione alla User Experience (UX).
+                  {{ t('services.front_desc') }}
                 </p>
               </div>
             </div>
