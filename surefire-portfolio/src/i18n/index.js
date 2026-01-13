@@ -18,7 +18,8 @@ const messages = {
         title: "Let's talk about your next project?",
         subtitle: "Currently available for new opportunities as a Full Stack Developer.",
         qr_title: "Scan QR Code",
-        qr_text: "Add me on WeChat to collaborate"
+        qr_text: "Add me on WeChat to collaborate",
+        view_github:"Watch all projects"
     },
     about: {
         title: "Tech Stack & Skills",
@@ -67,7 +68,8 @@ const messages = {
         title: "Parliamo del tuo prossimo progetto?",
         subtitle: "Attualmente disponibile per nuove opportunità come Full Stack Developer.",
         qr_title: "Scannerizza QR Code",
-        qr_text: "Aggiungimi su WeChat per collaborare"
+        qr_text: "Aggiungimi su WeChat per collaborare",
+        view_github:"Vedi tutti i progetti"
     },
     about: {
         title: "Tech Stack & Competenze",
